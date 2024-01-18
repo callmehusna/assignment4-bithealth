@@ -1,6 +1,6 @@
 async function submitData() {
 	//To-do : get data of the specified country
-	const url = 'https://covid-193.p.rapidapi.com/statistics';
+	const url = 'https://covid-193.p.rapidapi.com/statistics?country=';
 	const options = {
 		method: 'GET',
 		headers: {
@@ -9,7 +9,9 @@ async function submitData() {
 		}
 	};
 	try {
-		const response = await fetch(url, options);
+		const countryFilter = document.getElementById("get-data").value
+		let countryUrl = url + countryFilter
+		const response = await fetch(countryUrl, options);
 		result = await response.json();
 		//console.log("Ambil data");
 		dataFilter(result)
@@ -18,9 +20,10 @@ async function submitData() {
 	}
 }
 function dataFilter(arr) {
-	const countryFilter = document.getElementById("get-data").value
+	
 	//console.log(countryFilter)
-	let data = arr.response.filter(item => item.country == countryFilter)
+	//let data = arr.response.filter(item => item.country == countryFilter)
+	let data = arr.response
 	console.log(data[0])
 	if (data[0]) {
 		let value = 0
