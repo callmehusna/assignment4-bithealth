@@ -4,7 +4,7 @@ async function submitData() {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': 'Key',
+			'X-RapidAPI-Key': '',
 			'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
 		}
 	};
@@ -29,7 +29,7 @@ function dataFilter(arr) {
 		data.cases.active == null ? value = 0 : value = data.cases.active
 		document.getElementById("Active").innerHTML = value
 		data.cases.new == null ? value = 0 : value = data.cases.new
-		document.getElementById("New").innerHTML = "+" + value
+		document.getElementById("New").innerHTML = value
 		data.cases.total == null ? value = 0 : value = data.cases.total
 		document.getElementById("Total").innerHTML = data.cases.total
 		data.cases.recovered == null ? value = 0 : value = data.cases.recovered
