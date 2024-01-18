@@ -20,24 +20,23 @@ async function submitData() {
 	}
 }
 function dataFilter(arr) {
-	
 	//console.log(countryFilter)
 	//let data = arr.response.filter(item => item.country == countryFilter)
-	let data = arr.response
-	console.log(data[0])
-	if (data[0]) {
+	let data = arr.response[0]
+	console.log(data)
+	if (data) {
 		let value = 0
-		data[0].cases.active == null ? value = 0 : value = data[0].cases.active
+		data.cases.active == null ? value = 0 : value = data.cases.active
 		document.getElementById("Active").innerHTML = value
-		data[0].cases.new == null ? value = 0 : value = data[0].cases.new
+		data.cases.new == null ? value = 0 : value = data.cases.new
 		document.getElementById("New").innerHTML = "+" + value
-		data[0].cases.total == null ? value = 0 : value = data[0].cases.total
-		document.getElementById("Total").innerHTML = data[0].cases.total
-		data[0].cases.recovered == null ? value = 0 : value = data[0].cases.recovered
+		data.cases.total == null ? value = 0 : value = data.cases.total
+		document.getElementById("Total").innerHTML = data.cases.total
+		data.cases.recovered == null ? value = 0 : value = data.cases.recovered
 		document.getElementById("Recovered").innerHTML = value
-		data[0].deaths.total == null ? value = 0 : value = data[0].deaths.total
+		data.deaths.total == null ? value = 0 : value = data.deaths.total
 		document.getElementById("Deaths").innerHTML = value
-		data[0].tests.total == null ? value = 0 : value = data[0].tests.total
+		data.tests.total == null ? value = 0 : value = data.tests.total
 		document.getElementById("Tests").innerHTML = value
 	} else {
 		//alert("Country not found")
