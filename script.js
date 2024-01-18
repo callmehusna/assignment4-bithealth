@@ -4,12 +4,13 @@ async function submitData() {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '',
+			'X-RapidAPI-Key': 'key',
 			'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
 		}
 	};
 	try {
 		const countryFilter = document.getElementById("get-data").value
+		document.getElementById("warning-country").innerHTML = "Data for country " + countryFilter + " is not found"
 		let countryUrl = url + countryFilter
 		const response = await fetch(countryUrl, options);
 		result = await response.json();
