@@ -4,7 +4,7 @@ async function submitData() {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '0c3c5a381dmsh78456a199024108p1329acjsndad4cfccf8f3',
+			'X-RapidAPI-Key': 'KEY',
 			'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
 		}
 	};
